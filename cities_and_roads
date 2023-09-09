@@ -1,0 +1,12 @@
+from collections import defaultdict
+n= int(input())
+graph=defaultdict(list)
+for i in range(n):
+  line= list(map(int,input().split()))
+  for j in range(n):
+    if line[j]==1:
+      graph[i+1].append(j+1)
+ans=0
+for node in graph:
+  ans+= len(graph[node])
+print(ans//2)
